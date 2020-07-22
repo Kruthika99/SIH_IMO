@@ -60,7 +60,12 @@ def display(request):
         list_shg=shg.objects.values('Name','Amount','Activity').filter(Registration_id_imo=reg)
         return render(request,"displaySHG.html",{'shg':list_shg})
     else:
-        return render(request,"displayid.html")
+        list_id=shg.objects.values('Registration_id_imo')
+        id=[]
+        for i in list_id:
+            if i not in id:
+                id.append(i)
+        return render(request,"displayid.html",{'ids':id})
 
 
 def payinstallments(request):

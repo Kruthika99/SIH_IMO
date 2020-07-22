@@ -46,13 +46,19 @@
 
             </ul>
     </nav>
-        <div class="container">
-
+        <div class="pl-6 container">
+<br/><br/>
     <form action="" method="POST">
         {% csrf_token %}
         <br/>
-        <h4>Registration ID of IMO:     </h4>
-        <input type="text" class="form-control" value="" name="reg" required/><br/>
+        <div class="input-group">
+            <label><h4 >Registration ID of IMO :   <span style="color:white">kkk</span>  </h4></label>
+        <select class="form-control" value="" name="reg" required>
+            {% for s in ids %}
+                <option>{{s.Registration_id_imo}}</option>
+            {% endfor %}
+        </select>
+        </div><br/>
         <div class="text-center">
             <button type="submit" class="btn btn-primary btn-lg" style="text-align:center" >Submit</button>
       </div>

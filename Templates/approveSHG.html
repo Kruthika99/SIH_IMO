@@ -57,14 +57,23 @@
 
   <form action="" method="POST" >
     {% csrf_token %}
-      <table class="table table-bordered">
+      <table class="table table-borderless">
         <thead>
         </thead>
         <tr>
             <td><label>Name of SHG <b><span style="color:red">* </span></b> :  </label>
                 <input type="text" class="form-control"   value="" name="name" required/></td>
             <td><label>Activity Name <b><span style="color:red">* </span></b> :  </label>
-                <input type="text" class="form-control" value="" name="act" required/></td>
+                <select type="text" class="form-control" value="" name="act" required>
+                    <option>Tailoring</option>
+                    <option>Handicraft</option>
+                    <option>Handloom</option>
+                    <option>Agriculture</option>
+                    <option>Diary Activities</option>
+                    <option>Food Processing</option>
+                    <option>Other</option>
+            </select>
+            </td>
         </tr>
         <tr>
             <td><label>Loan Amount (in Lakhs) <b><span style="color:red">* </span></b> :  </label>
@@ -88,7 +97,11 @@
               <td><label>Years In Current Job <b><span style="color:red">* </span></b> :  </label>
                 <input type="text" class="form-control" placeholder="" value="" name="ycj" required/></td>
               <td><label>Previous Debt <b><span style="color:red">* </span></b> :  </label>
-                <input type="text" class="form-control"  placeholder="" value="" name="pd" required/></td>
+                <select type="text" class="form-control"  placeholder="" value="" name="pd" required>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+              </td>
         </tr>
       </table>
       <div class="text-center">
